@@ -7,9 +7,12 @@
         mc:Ignorable="d"
         WindowState="Maximized"
         FontFamily="Garamond" 
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        <Image x:Name="arena" Stretch="None" Margin="20"/>
+        Loaded="Window_Loaded"
+        Title="Snake Game" Height="1000" Width="1000" 
+        Keyboard.KeyDown="Window_KeyDown"
+        >
+    <StackPanel x:Name="spImage">
+        <Image x:Name="arena" Stretch="None"/>
 
-    </Grid>
+    </StackPanel>
 </Window>

@@ -26,17 +26,17 @@ namespace Snake.Drawer.SnakeBodyParts
             CentralPart = new DrawingGroup();
             Tail = new DrawingGroup();
 
-            GeometryDrawing bodyPart = new GeometryDrawing(Brushes.Blue, null, new RectangleGeometry(new Rect(new Size(5, 5)),2.5, 2.5));
+            GeometryDrawing bodyPart = new GeometryDrawing(Brushes.Blue, null, new RectangleGeometry(new Rect(new Size(25, 25))));
             GeometryDrawing eye = new GeometryDrawing(Brushes.Red, null, new EllipseGeometry(new Point(2.5, 2.5), 2.5, 2.5));
             GeometryDrawing tail = new GeometryDrawing(Brushes.Yellow, null, new EllipseGeometry(new Point(2.5, 2.5), 2.5, 2.5));
 
             Head.Children.Add(bodyPart);
-            Head.Children.Add(eye);
+            //Head.Children.Add(eye);
 
             CentralPart.Children.Add(bodyPart);
 
             Tail.Children.Add(bodyPart);
-            Tail.Children.Add(tail);
+            //Tail.Children.Add(tail);
         }
 
 

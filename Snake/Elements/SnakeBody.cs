@@ -7,32 +7,23 @@ using System.Windows;
 
 namespace Snake.Elements
 {
-    enum EDirection
-    { 
-        up,
-        right,
-        down,
-        left
-    }
+
     class SnakeBody
     {
         public List<Point> BodyParts { get; private set; }
-        public EDirection Direction { get; private set; }
         public int Lenght => BodyParts.Count();
 
-        public SnakeBody(Point inicialPoint, EDirection initialDirection)
+        public SnakeBody(Point inicialPoint)
         {
+            this.BodyParts = new List<Point>();
             this.BodyParts.Add(inicialPoint);
-            this.Direction = initialDirection;            
-        }        
-        public void ChangeDirection(EDirection newDirection)
-        {
-            this.Direction = newDirection;
+            
         }
-        public void MoveASnake(Point newPosition)
+        public void MoveASnake(Point newPosition, bool eat)
         {
             this.BodyParts.Insert(0, newPosition);
-            this.BodyParts.Remove(BodyParts.Last());
+            if (!eat)
+                this.BodyParts.RemoveAt(Lenght-1);
         }
     }
 }

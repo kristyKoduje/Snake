@@ -26,24 +26,19 @@ namespace Snake.Drawer
 
             if (snakeBodyPosition.Lenght > 0)
             {
-                drawAPart(drawingContext, snakeBodyPosition.BodyParts.First(), snakePartsToDraw.Head);
+                DrawerOfAllObjects.drawAPart(drawingContext, snakeBodyPosition.BodyParts.First(), snakePartsToDraw.Head);
             }
 
             if (snakeBodyPosition.Lenght > 1)
             {
                 for (int i = 1; i < snakeBodyPosition.Lenght - 1; i++)
                 {
-                    drawAPart(drawingContext, snakeBodyPosition.BodyParts[i], snakePartsToDraw.CentralPart);
+                    DrawerOfAllObjects.drawAPart(drawingContext, snakeBodyPosition.BodyParts[i], snakePartsToDraw.CentralPart);
                 }
-                drawAPart(drawingContext, snakeBodyPosition.BodyParts.Last(), snakePartsToDraw.Tail);
+                DrawerOfAllObjects.drawAPart(drawingContext, snakeBodyPosition.BodyParts.Last(), snakePartsToDraw.Tail);
             }
         }
 
-        private void drawAPart(DrawingContext drawingContext, Point point, DrawingGroup partToDraw)
-        {
-            TranslateTransform transform = new TranslateTransform(point.X, point.Y);
-            drawingContext.PushTransform(transform);
-            drawingContext.DrawDrawing(partToDraw);
-        }
+
     }
 }
